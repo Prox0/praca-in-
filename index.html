@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skrzyżowanie ulic sterowane PLC S7-1200 — praca inżynierska</title>
+    <meta name="description" content="Praca inżynierska: sterowanie sygnalizacją skrzyżowania na sterowniku PLC Siemens S7-1200." />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Przejdź do góry">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-text">Praca inżynierska</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span class="sr-only">Otwórz menu</span>
+        </button>
+
+        <nav class="nav" id="site-nav" aria-label="Główna nawigacja">
+          <a href="#o-projekcie">O projekcie</a>
+          <a href="#cele">Cele</a>
+          <a href="#metody">Metody</a>
+          <a href="#zdjecia">Zdjęcia pracy</a>
+          <a href="#wyniki">Wyniki</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Politechnika Białostocka · Mechatronika</p>
+            <h1>Skrzyżowanie ulic sterowane PLC Siemens S7‑1200</h1>
+            <p class="lead">
+              Projekt obejmuje opracowanie logiki sterowania sygnalizacją świetlną skrzyżowania oraz
+              jej implementację na sterowniku PLC (Siemens S7‑1200). Strona służy jako szybka
+              dokumentacja: opis założeń, sterowania, wyników i zdjęć stanowiska/modelu.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#o-projekcie">Zobacz opis</a>
+              <a class="btn ghost" href="#kontakt">Skontaktuj się</a>
+            </div>
+
+            <ul class="stats" aria-label="Szybkie informacje">
+              <li>
+                <span class="stat-value" id="year"></span>
+                <span class="stat-label">Rok</span>
+              </li>
+              <li>
+                <span class="stat-value">S7‑1200</span>
+                <span class="stat-label">Sterownik PLC</span>
+              </li>
+              <li>
+                <span class="stat-value">Sygnalizacja</span>
+                <span class="stat-label">Ruch drogowy</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-card" role="region" aria-label="Streszczenie">
+            <h2 class="card-title">Streszczenie</h2>
+            <p class="muted">
+              Celem pracy jest zaprojektowanie i implementacja sterowania sygnalizacją świetlną
+              czterowlotowego skrzyżowania z uwzględnieniem bezpiecznych stanów przejściowych,
+              priorytetów oraz poprawnej sekwencji świateł. Realizacja została wykonana na sterowniku
+              PLC Siemens S7‑1200 (TIA Portal) oraz zweryfikowana na modelu/stanowisku.
+            </p>
+            <div class="card-divider"></div>
+            <dl class="key-value">
+              <div>
+                <dt>Autor</dt>
+                <dd>Imię Nazwisko</dd>
+              </div>
+              <div>
+                <dt>Promotor</dt>
+                <dd>Dr …</dd>
+              </div>
+              <div>
+                <dt>Uczelnia</dt>
+                <dd>Politechnika Białostocka</dd>
+              </div>
+              <div>
+                <dt>Kierunek</dt>
+                <dd>Mechatronika</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="o-projekcie">
+        <div class="container">
+          <div class="section-head">
+            <h2>O projekcie</h2>
+            <p class="muted">
+              Opis założeń, zakresu i logiki działania sterowania sygnalizacją skrzyżowania.
+            </p>
+          </div>
+
+          <div class="grid two">
+            <article class="panel">
+              <h3>Kontekst</h3>
+              <p>
+                Sterowanie ruchem na skrzyżowaniach wymaga zapewnienia bezpieczeństwa (brak stanów
+                kolizyjnych), przewidywalności oraz odporności na błędy. W pracy zaprojektowano
+                sekwencje sygnalizacji i zależności między kierunkami, a następnie zaimplementowano je
+                w PLC.
+              </p>
+            </article>
+
+            <article class="panel">
+              <h3>Zakres</h3>
+              <ul class="list">
+                <li>opracowanie sekwencji świateł oraz stanów przejściowych (np. żółte)</li>
+                <li>implementacja programu sterującego na PLC Siemens S7‑1200 (TIA Portal)</li>
+                <li>weryfikacja działania na modelu skrzyżowania/stanowisku dydaktycznym</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cele">
+        <div class="container">
+          <div class="section-head">
+            <h2>Cele i wymagania</h2>
+            <p class="muted">Najważniejsze cele projektu i kryteria poprawnego działania.</p>
+          </div>
+
+          <div class="grid three">
+            <article class="panel">
+              <h3>Cel główny</h3>
+              <p>
+                Implementacja sterowania sygnalizacją skrzyżowania na PLC Siemens S7‑1200 wraz z
+                walidacją poprawności sekwencji i bezpieczeństwa.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>Cele szczegółowe</h3>
+              <ul class="list">
+                <li>definicja stanów i przejść sygnalizacji dla wszystkich wlotów i relacji kolizyjnych</li>
+                <li>dobór i implementacja logiki czasów oraz blokad (brak zielonego na kolizyjnych kierunkach)</li>
+                <li>przygotowanie modelu/okablowania sygnalizatorów i testów scenariuszy</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h3>Kryteria</h3>
+              <ul class="list">
+                <li>brak stanów kolizyjnych dla zdefiniowanych strumieni ruchu</li>
+                <li>poprawne stany przejściowe i przewidywalna praca w czasie</li>
+                <li>odtwarzalność wyników w testach (powtarzalna sekwencja)</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="metody">
+        <div class="container">
+          <div class="section-head">
+            <h2>Metody i implementacja</h2>
+            <p class="muted">Podejście projektowe, mapowanie sygnalizatorów i struktura programu PLC.</p>
+          </div>
+
+          <div class="grid two">
+            <article class="panel">
+              <h3>Architektura</h3>
+              <p>
+                Program PLC został podzielony na logiczne stany pracy sygnalizacji, które przełączają
+                się według zdefiniowanych warunków i czasów. Wyjścia PLC mapują się na sygnalizatory
+                (czerwone/żółte/zielone) dla poszczególnych wlotów.
+              </p>
+              <p class="callout">
+                Wskazówka: zdjęcia i schematy dodaj do folderu <span class="inline-code">assets/img</span>.
+              </p>
+            </article>
+
+            <article class="panel">
+              <h3>Technologie</h3>
+              <div class="tags" aria-label="Technologie">
+                <span class="tag">Siemens S7‑1200</span>
+                <span class="tag">TIA Portal</span>
+                <span class="tag">PLC</span>
+                <span class="tag">Model skrzyżowania</span>
+                <span class="tag">Sygnalizacja świetlna</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="zdjecia">
+        <div class="container">
+          <div class="section-head">
+            <h2>Zdjęcia pracy</h2>
+            <p class="muted">Galeria schematu oraz modelu skrzyżowania (wklej pliki do <span class="inline-code">assets/img</span>).</p>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="figure">
+              <img
+                src="assets/img/schemat_skrzyzowania.jpg"
+                alt="Schemat skrzyżowania z relacjami przejazdu i sygnalizacją"
+                loading="lazy"
+              />
+              <figcaption>Schemat skrzyżowania i relacji ruchu</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img
+                src="assets/img/model_01.jpg"
+                alt="Model skrzyżowania — widok z góry"
+                loading="lazy"
+              />
+              <figcaption>Model skrzyżowania — widok z góry</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img
+                src="assets/img/model_02.jpg"
+                alt="Model skrzyżowania — widok perspektywiczny"
+                loading="lazy"
+              />
+              <figcaption>Model skrzyżowania — widok perspektywiczny</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img
+                src="assets/img/model_03.jpg"
+                alt="Model skrzyżowania — elementy sygnalizacji"
+                loading="lazy"
+              />
+              <figcaption>Sygnalizatory i infrastruktura na modelu</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img
+                src="assets/img/model_04.jpg"
+                alt="Model skrzyżowania — widok z warsztatu"
+                loading="lazy"
+              />
+              <figcaption>Stanowisko / przygotowanie modelu</figcaption>
+            </figure>
+
+            <figure class="figure">
+              <img
+                src="assets/img/model_05.jpg"
+                alt="Model skrzyżowania — dodatkowy widok"
+                loading="lazy"
+              />
+              <figcaption>Dodatkowy widok modelu</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="wyniki">
+        <div class="container">
+          <div class="section-head">
+            <h2>Wyniki i wnioski</h2>
+            <p class="muted">Miejsce na tabelę wyników, wykresy, porównania i krótkie wnioski.</p>
+          </div>
+
+          <div class="panel">
+            <div class="table-wrap" role="region" aria-label="Tabela wyników" tabindex="0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metryka</th>
+                    <th>Wariant A</th>
+                    <th>Wariant B</th>
+                    <th>Uwagi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Przykładowa metryka</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>Wpisz interpretację</td>
+                  </tr>
+                  <tr>
+                    <td>Inna metryka</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>Wpisz interpretację</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kontakt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Kontakt</h2>
+            <p class="muted">Możesz zostawić e‑mail, link do repozytorium lub formularz.</p>
+          </div>
+
+          <div class="grid two">
+            <article class="panel">
+              <h3>Dane</h3>
+              <ul class="list">
+                <li>E‑mail: <a href="mailto:twoj.email@przyklad.pl">twoj.email@przyklad.pl</a></li>
+                <li>Repo: <a href="#">link</a></li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Wiadomość (demo)</h3>
+              <form class="form" id="contact-form">
+                <label>
+                  <span>Imię</span>
+                  <input name="name" autocomplete="given-name" placeholder="Np. Milosz" required />
+                </label>
+                <label>
+                  <span>E‑mail</span>
+                  <input name="email" type="email" autocomplete="email" placeholder="twoj@email" required />
+                </label>
+                <label>
+                  <span>Treść</span>
+                  <textarea name="message" rows="4" placeholder="Krótka wiadomość" required></textarea>
+                </label>
+                <button class="btn primary" type="submit">Wyślij</button>
+                <p class="muted" id="form-hint">Formularz demonstracyjny — nie wysyła danych (tylko walidacja).</p>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="muted">© <span id="copyright-year"></span> Imię Nazwisko</p>
+        <a class="to-top" href="#top">Do góry</a>
+      </div>
+    </footer>
+  </body>
+</html>
